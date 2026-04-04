@@ -3,20 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <title>Cartas para Sayuri</title>
+
+<style>
+body{
+font-family: Arial;
+text-align:center;
+background:#ffe6f0;
+padding:30px;
+}
+
+h1{
+font-size:40px;
+}
+
+button{
+font-size:28px;
+padding:15px 30px;
+margin:15px;
+border:none;
+border-radius:15px;
+background:#ff66a3;
+color:white;
+}
+
+input{
+font-size:25px;
+padding:10px;
+border-radius:10px;
+border:1px solid gray;
+}
+
+#texto{
+font-size:26px;
+max-width:800px;
+margin:auto;
+}
+</style>
+
 </head>
 
-<body style="font-family:Arial;text-align:center;background:#ffe6f0;padding:40px">
+<body>
 
 <h1 id="texto">Estas cartas son para ti Sayuri 💖</h1>
 
-<button onclick="carta1()">Carta 1 💌</button>
-<button onclick="carta2()">Carta 2 🔒</button>
-<button onclick="carta3()">Carta 3 🔒</button>
+<button onclick="carta1()">💌 Carta 1</button>
+<button onclick="carta2()">🔒 Carta 2</button>
+<button onclick="carta3()">🔒 Carta 3</button>
 
 <div id="extra"></div>
 
 <script>
-
 let desbloqueo2 = false;
 let desbloqueo3 = false;
 
@@ -24,16 +60,11 @@ function carta1(){
 document.getElementById("texto").innerHTML =
 `Hola que tal bueno hoy bueno mañana cumplimos un mes mas de amistad y pues quiero agradecerte.<br><br>
 
-Agradecerte por estar a mi lado en momentos difíciles, agradecerte por soportarme en mis locuras, agradecerte por quedarte a mi lado. Y te preguntarás porque este baboso me agradece y pues es una historia que te resumiré pero te contaré.<br><br>
+Agradecerte por estar a mi lado en momentos difíciles, agradecerte por soportarme en mis locuras, agradecerte por quedarte a mi lado.<br><br>
 
-Me hicieron daño, si te conté sobre mi ex mejor amiga que me dejó así sin más pues bueno fue eso y tú dirás pero es una amiga, pero realmente soy muy sentimental y me dejó hecho MIERDA, pensé que fue mi culpa, me echaba la culpa me repetía que era una persona horrible, una basura, que me merecía ese dolor por ser mala persona.<br><br>
-
-Seguido de eso apareció la academia de la municipalidad y pues no sabía si entrar a la UNT con una carrera que realmente no me gustaba pero tuve tanta presión por parte de mi madre que decidí intentarlo y pues yo iba a estudiar pero por Fabián que también le agradezco de cierta manera nos conocimos y formamos un grupito aunque no era de hablar mucho aunque tiempo después tú y yo nos hicimos muy buenos amigos.<br><br>
-
-Esa es la razón por la que te agradezco porque me hiciste y haces olvidarme los malos ratos y problemas que tenga y gracias a eso decidí plantarme con mi mamá para decirle que no quería estudiar en la UNT y ahora comenzaré a estudiar lo que me gusta. Te agradezco mucho Sayuri 💖<br><br>
+Te agradezco mucho Sayuri 💖<br><br>
 
 <b>Postdata: la contraseña de la segunda carta es: te agradezco</b>`;
-
 document.getElementById("extra").innerHTML="";
 desbloqueo2 = true;
 }
@@ -43,7 +74,6 @@ if(!desbloqueo2){
 document.getElementById("texto").innerHTML="Primero lee la carta 1 💖";
 return;
 }
-
 document.getElementById("texto").innerHTML="Introduce la contraseña 🔐";
 document.getElementById("extra").innerHTML =
 '<input id="clave"><br><br><button onclick="verificar2()">Abrir carta</button>';
@@ -53,7 +83,7 @@ function verificar2(){
 var clave=document.getElementById("clave").value;
 if(clave=="te agradezco"){
 document.getElementById("texto").innerHTML =
-"Carta 2 desbloqueada 💖 (Luego pondremos aquí el mensaje)";
+"Carta 2 desbloqueada 💖";
 document.getElementById("extra").innerHTML="";
 desbloqueo3 = true;
 }else{
@@ -69,7 +99,6 @@ return;
 document.getElementById("texto").innerHTML="Carta 3 desbloqueada 💖";
 document.getElementById("extra").innerHTML="";
 }
-
 </script>
 
 </body>
