@@ -1,98 +1,75 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cartas para Sayuri 💖</title>
-
-<style>
-body{
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg,#ffd6e7,#ffeaf4);
-  text-align:center;
-  padding:40px;
-}
-
-h1{
-  color:#ff4d88;
-}
-
-button{
-  padding:15px 25px;
-  margin:10px;
-  border:none;
-  border-radius:15px;
-  font-size:18px;
-  background:#ff4d88;
-  color:white;
-}
-
-input{
-  padding:10px;
-  font-size:18px;
-  border-radius:10px;
-  border:1px solid gray;
-}
-
-.carta{
-  background:white;
-  padding:25px;
-  border-radius:20px;
-  margin-top:25px;
-  box-shadow:0 0 15px rgba(0,0,0,0.2);
-}
-</style>
+<title>Cartas para Sayuri</title>
 </head>
 
-<body>
+<body style="font-family:Arial;text-align:center;background:#ffe6f0;padding:40px">
 
-<h1 id="titulo">Estas cartas son para ti Sayuri 💌</h1>
+<h1 id="texto">Estas cartas son para ti Sayuri 💖</h1>
 
-<button onclick="carta1()">Carta 1 💖</button>
-<button onclick="pedirClave(2)">Carta 2 🔒</button>
-<button onclick="pedirClave(3)">Carta 3 🔒</button>
+<button onclick="carta1()">Carta 1 💌</button>
+<button onclick="carta2()">Carta 2 🔒</button>
+<button onclick="carta3()">Carta 3 🔒</button>
 
-<div id="contenido"></div>
+<div id="extra"></div>
 
 <script>
-let desbloqueada2=false;
+
+let desbloqueo2 = false;
+let desbloqueo3 = false;
 
 function carta1(){
-document.getElementById("contenido").innerHTML=
-"<div class='carta'>"+
-"<h2>Carta 1 💖</h2>"+
-"<p>Me gustas sayuri 💖</p>"+
-"<br><b>Postdata: la contraseña es: tequiero</b>"+
-"</div>";
+document.getElementById("texto").innerHTML =
+`Hola que tal bueno hoy bueno mañana cumplimos un mes mas de amistad y pues quiero agradecerte.<br><br>
+
+Agradecerte por estar a mi lado en momentos difíciles, agradecerte por soportarme en mis locuras, agradecerte por quedarte a mi lado. Y te preguntarás porque este baboso me agradece y pues es una historia que te resumiré pero te contaré.<br><br>
+
+Me hicieron daño, si te conté sobre mi ex mejor amiga que me dejó así sin más pues bueno fue eso y tú dirás pero es una amiga, pero realmente soy muy sentimental y me dejó hecho MIERDA, pensé que fue mi culpa, me echaba la culpa me repetía que era una persona horrible, una basura, que me merecía ese dolor por ser mala persona.<br><br>
+
+Seguido de eso apareció la academia de la municipalidad y pues no sabía si entrar a la UNT con una carrera que realmente no me gustaba pero tuve tanta presión por parte de mi madre que decidí intentarlo y pues yo iba a estudiar pero por Fabián que también le agradezco de cierta manera nos conocimos y formamos un grupito aunque no era de hablar mucho aunque tiempo después tú y yo nos hicimos muy buenos amigos.<br><br>
+
+Esa es la razón por la que te agradezco porque me hiciste y haces olvidarme los malos ratos y problemas que tenga y gracias a eso decidí plantarme con mi mamá para decirle que no quería estudiar en la UNT y ahora comenzaré a estudiar lo que me gusta. Te agradezco mucho Sayuri 💖<br><br>
+
+<b>Postdata: la contraseña de la segunda carta es: te agradezco</b>`;
+
+document.getElementById("extra").innerHTML="";
+desbloqueo2 = true;
 }
 
-function pedirClave(num){
-document.getElementById("contenido").innerHTML=
-"<div class='carta'>"+
-"<h2>Introduce la contraseña 🔐</h2>"+
-"<input id='clave'><br><br>"+
-"<button onclick='verificar("+num+")'>Entrar</button>"+
-"</div>";
+function carta2(){
+if(!desbloqueo2){
+document.getElementById("texto").innerHTML="Primero lee la carta 1 💖";
+return;
 }
 
-function verificar(num){
-let clave=document.getElementById("clave").value;
+document.getElementById("texto").innerHTML="Introduce la contraseña 🔐";
+document.getElementById("extra").innerHTML =
+'<input id="clave"><br><br><button onclick="verificar2()">Abrir carta</button>';
+}
 
-if(num==2 && clave=="tequiero"){
-desbloqueada2=true;
-document.getElementById("contenido").innerHTML=
-"<div class='carta'><h2>Carta 2 💌</h2><p>Mensaje secreto desbloqueado 💖</p></div>";
-}
-else if(num==3 && desbloqueada2 && clave!=""){
-document.getElementById("contenido").innerHTML=
-"<div class='carta'><h2>Carta 3 💌</h2><p>Última carta desbloqueada 💖</p></div>";
-}
-else{
-document.getElementById("contenido").innerHTML=
-"<div class='carta'><h2>Contraseña incorrecta 😢</h2></div>";
+function verificar2(){
+var clave=document.getElementById("clave").value;
+if(clave=="te agradezco"){
+document.getElementById("texto").innerHTML =
+"Carta 2 desbloqueada 💖 (Luego pondremos aquí el mensaje)";
+document.getElementById("extra").innerHTML="";
+desbloqueo3 = true;
+}else{
+document.getElementById("texto").innerHTML="Contraseña incorrecta 😢";
 }
 }
+
+function carta3(){
+if(!desbloqueo3){
+document.getElementById("texto").innerHTML="Primero desbloquea la carta 2 😉";
+return;
+}
+document.getElementById("texto").innerHTML="Carta 3 desbloqueada 💖";
+document.getElementById("extra").innerHTML="";
+}
+
 </script>
 
 </body>
