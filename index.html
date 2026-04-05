@@ -51,29 +51,20 @@ margin:auto;
 let desbloqueo2=false;
 let desbloqueo3=false;
 
-// ✏️ AQUI PEGARAS LA CARTA 2 EN EL FUTURO
+// ✏️ AQUI PEGARAS LA CARTA 2
 let carta2Texto = `
 AQUI ES DONDE PEGARAS LA CARTA 2 💖
 `;
 
-// ✏️ AQUI PEGARAS LA CARTA 3 EN EL FUTURO
+// ✏️ AQUI PEGARAS LA CARTA 3
 let carta3Texto = `
 AQUI ES DONDE PEGARAS LA CARTA 3 💖
 `;
 
 function carta1(){
 document.getElementById("texto").innerHTML = `
-Hola que tal bueno hoy bueno mañana cumplimos un mes mas de amistad y pues quiero agradecerte.<br><br>
-
-Agradecerte por estar a mi lado en momentos difíciles, agradecerte por soportarme en mis locuras, agradecerte por quedarte a mi lado. Y te preguntarás porque este baboso me agradece y pues es una historia que te resumiré pero te contaré.<br><br>
-
-Me hicieron daño si te conté sobre mi ex mejor amiga que me dejó así sin más pues bueno fue eso y tú dirás pero es una amiga, pero realmente soy muy sentimental y me dejó hecho MIERDA, pensé que fue mi culpa, me echaba la culpa me repetía que era una persona horrible, una basura, que me merecía ese dolor por ser mala persona.<br><br>
-
-Seguido de eso apareció la academia de la municipalidad y pues no sabía si entrar a la UNT con una carrera que realmente no me gustaba pero tuve tanta presión por parte de mi madre que decidí intentarlo y pues yo iba a estudiar pero por Fabián que también le agradezco de cierta manera nos conocimos y formamos un grupito aunque no era de hablar mucho aunque tiempo después tú y yo nos hicimos muy buenos amigos.<br><br>
-
-Esa es la razón por la que te agradezco porque me hiciste y haces olvidarme los malos ratos y problemas que tenga y gracias a eso decidí plantarme con mi mamá para decirle que no quería estudiar en la UNT y ahora comenzaré a estudiar lo que me gusta. Te agradezco mucho Sayuri 💖<br><br>
-
-<b>Postdata: la contraseña de la carta 2 es: te agradezco</b>
+Hola que tal bueno mañana cumplimos un mes más de amistad y quiero agradecerte 💖<br><br>
+<b>Postdata: contraseña carta 2 → te agradezco</b>
 `;
 document.getElementById("extra").innerHTML="";
 desbloqueo2=true;
@@ -86,11 +77,11 @@ return;
 }
 document.getElementById("texto").innerHTML="Introduce contraseña:";
 document.getElementById("extra").innerHTML=
-'<input id="clave"><br><br><button onclick="verificar2()">Abrir carta</button>';
+'<input id="clave2"><br><br><button onclick="verificar2()">Abrir carta 2</button>';
 }
 
 function verificar2(){
-if(document.getElementById("clave").value=="te agradezco"){
+if(document.getElementById("clave2").value=="te agradezco"){
 document.getElementById("texto").innerHTML=carta2Texto;
 document.getElementById("extra").innerHTML="";
 desbloqueo3=true;
@@ -101,11 +92,21 @@ document.getElementById("texto").innerHTML="Contraseña incorrecta 😢";
 
 function carta3(){
 if(!desbloqueo3){
-document.getElementById("texto").innerHTML="Primero desbloquea la carta 2 😉";
+document.getElementById("texto").innerHTML="Primero abre la carta 2 😉";
 return;
 }
+document.getElementById("texto").innerHTML="Introduce contraseña carta 3:";
+document.getElementById("extra").innerHTML=
+'<input id="clave3"><br><br><button onclick="verificar3()">Abrir carta 3</button>';
+}
+
+function verificar3(){
+if(document.getElementById("clave3").value=="te quiero"){
 document.getElementById("texto").innerHTML=carta3Texto;
 document.getElementById("extra").innerHTML="";
+}else{
+document.getElementById("texto").innerHTML="Contraseña incorrecta 😢";
+}
 }
 
 </script>
