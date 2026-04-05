@@ -21,21 +21,13 @@ border-radius:15px;
 background:#ff66a3;
 color:white;
 }
-input, textarea{
+input{
 font-size:22px;
 padding:10px;
 border-radius:10px;
 border:1px solid gray;
-width:90%;
-max-width:700px;
 }
-textarea{height:220px;}
 #texto{font-size:26px;max-width:800px;margin:auto;}
-.guia{
-font-size:18px;
-color:#444;
-margin:10px;
-}
 </style>
 
 </head>
@@ -47,16 +39,25 @@ margin:10px;
 <button onclick="carta1()">💌 Carta 1</button>
 <button onclick="carta2()">🔒 Carta 2</button>
 <button onclick="carta3()">🔒 Carta 3</button>
-<button onclick="modoEditor()">✏️ Editar cartas</button>
 
 <div id="extra"></div>
 
 <script>
+
 let desbloqueo2=false;
 let desbloqueo3=false;
 
-let carta2Texto = localStorage.getItem("carta2") || "👉 AQUÍ SE MOSTRARÁ LA CARTA 2 CUANDO LA ESCRIBAS";
-let carta3Texto = localStorage.getItem("carta3") || "👉 AQUÍ SE MOSTRARÁ LA CARTA 3 CUANDO LA ESCRIBAS";
+// ✏️✏️✏️ AQUÍ ESCRIBIRÁS LA CARTA 2 ✏️✏️✏️
+let carta2Texto = `
+AQUI ES DONDE PEGARAS LA CARTA 2 💖
+REEMPLAZA TODO ESTE TEXTO
+`;
+
+// ✏️✏️✏️ AQUÍ ESCRIBIRÁS LA CARTA 3 ✏️✏️✏️
+let carta3Texto = `
+AQUI ES DONDE PEGARAS LA CARTA 3 💖
+REEMPLAZA TODO ESTE TEXTO
+`;
 
 function carta1(){
 document.getElementById("texto").innerHTML=
@@ -80,7 +81,7 @@ return;
 }
 document.getElementById("texto").innerHTML="Introduce contraseña:";
 document.getElementById("extra").innerHTML=
-'<input id="clave"><br><br><button onclick="verificar2()">Abrir</button>';
+'<input id="clave"><br><br><button onclick="verificar2()">Abrir carta</button>';
 }
 
 function verificar2(){
@@ -95,44 +96,13 @@ document.getElementById("texto").innerHTML="Contraseña incorrecta 😢";
 
 function carta3(){
 if(!desbloqueo3){
-document.getElementById("texto").innerHTML="Primero abre la carta 2 😉";
+document.getElementById("texto").innerHTML="Primero desbloquea la carta 2 😉";
 return;
 }
 document.getElementById("texto").innerHTML=carta3Texto;
 document.getElementById("extra").innerHTML="";
 }
 
-function modoEditor(){
-let clave=prompt("Contraseña para editar");
-if(clave!="admin123") return;
-
-document.getElementById("texto").innerHTML="✏️ MODO ESCRIBIR CARTAS";
-
-document.getElementById("extra").innerHTML=`
-
-<div class="guia">👇 ESCRIBE AQUÍ LA CARTA 2 👇</div>
-<textarea id="edit2" placeholder="Aquí escribe TODO el mensaje de la carta 2...">${carta2Texto}</textarea>
-<br><br>
-<button onclick="guardar2()">Guardar carta 2 💖</button>
-
-<br><br><br>
-
-<div class="guia">👇 ESCRIBE AQUÍ LA CARTA 3 👇</div>
-<textarea id="edit3" placeholder="Aquí escribe TODO el mensaje de la carta 3...">${carta3Texto}</textarea>
-<br><br>
-<button onclick="guardar3()">Guardar carta 3 💖</button>
-
-`;
-}
-
-function guardar2(){
-localStorage.setItem("carta2",document.getElementById("edit2").value);
-alert("Carta 2 guardada 💖");
-}
-function guardar3(){
-localStorage.setItem("carta3",document.getElementById("edit3").value);
-alert("Carta 3 guardada 💖");
-}
 </script>
 
 </body>
