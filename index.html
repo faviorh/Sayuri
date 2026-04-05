@@ -27,7 +27,11 @@ padding:10px;
 border-radius:10px;
 border:1px solid gray;
 }
-#texto{font-size:26px;max-width:800px;margin:auto;}
+#texto{
+font-size:26px;
+max-width:800px;
+margin:auto;
+}
 </style>
 
 </head>
@@ -47,29 +51,30 @@ border:1px solid gray;
 let desbloqueo2=false;
 let desbloqueo3=false;
 
-// ✏️✏️✏️ AQUÍ ESCRIBIRÁS LA CARTA 2 ✏️✏️✏️
+// ✏️ AQUI PEGARAS LA CARTA 2 EN EL FUTURO
 let carta2Texto = `
 AQUI ES DONDE PEGARAS LA CARTA 2 💖
-REEMPLAZA TODO ESTE TEXTO
 `;
 
-// ✏️✏️✏️ AQUÍ ESCRIBIRÁS LA CARTA 3 ✏️✏️✏️
+// ✏️ AQUI PEGARAS LA CARTA 3 EN EL FUTURO
 let carta3Texto = `
 AQUI ES DONDE PEGARAS LA CARTA 3 💖
-REEMPLAZA TODO ESTE TEXTO
 `;
 
 function carta1(){
-document.getElementById("texto").innerHTML=
-"Hola que tal bueno hoy bueno mañana cumplimos un mes mas de amistad y pues quiero agradecerte.
+document.getElementById("texto").innerHTML = `
+Hola que tal bueno hoy bueno mañana cumplimos un mes mas de amistad y pues quiero agradecerte.<br><br>
 
-Agradecerte por estar a mi lado en momentos difíciles,agradecerte por soportarme en mis locuras,agradecerte por quedarte a mi lado. Y te preguntarás porque este baboso me agradece y pues es una historia que te resumiré pero te contaré.
-Me hicieron daño si te conté sobro de mi ex mejor amiga que me dejo así sin mas pues bueno fue eso y tu dirás pero es una amiga,pero realmente soy muy sentimental y me dejo echo MIERDA,pensé que fue mi culpa,me echaba la culpa me repetía que era una persona horrible,una mierda,una basura,que me merecía ese dolor por ser mala persona.
-Seguido de eso apareció la academia de la municipalidad y pues no sabía si entrar a la unt con una carrera que realmente no me gustaba pero tuve tanta presión por parte de mi madre que decidí intentarlo y pues yo iba a estudiar pero por Fabián que también le agradezco de cierta manera nos conocimos y formamos un grupito aunque no era de hablar mucho aunque tiempo después tu y yo no hicimos muy buenos amigos. Esa es la razón por la que te agradezco porque me hiciste y haces olvidarme los malos ratos y problemas que tenga y de echo gracias a eso decidí plantarme con mi mamá para decirle que no quería estudiar en la unt y ahora comenzaré a estudiar lo que me gusta te agradezco mucho Sayuri.
+Agradecerte por estar a mi lado en momentos difíciles, agradecerte por soportarme en mis locuras, agradecerte por quedarte a mi lado. Y te preguntarás porque este baboso me agradece y pues es una historia que te resumiré pero te contaré.<br><br>
 
-Postdata: la contraseña de la segunda carta es:te agradezco <br><br>
+Me hicieron daño si te conté sobre mi ex mejor amiga que me dejó así sin más pues bueno fue eso y tú dirás pero es una amiga, pero realmente soy muy sentimental y me dejó hecho MIERDA, pensé que fue mi culpa, me echaba la culpa me repetía que era una persona horrible, una basura, que me merecía ese dolor por ser mala persona.<br><br>
 
-<b>Postdata: la contraseña de la segunda carta es: te agradezco";
+Seguido de eso apareció la academia de la municipalidad y pues no sabía si entrar a la UNT con una carrera que realmente no me gustaba pero tuve tanta presión por parte de mi madre que decidí intentarlo y pues yo iba a estudiar pero por Fabián que también le agradezco de cierta manera nos conocimos y formamos un grupito aunque no era de hablar mucho aunque tiempo después tú y yo nos hicimos muy buenos amigos.<br><br>
+
+Esa es la razón por la que te agradezco porque me hiciste y haces olvidarme los malos ratos y problemas que tenga y gracias a eso decidí plantarme con mi mamá para decirle que no quería estudiar en la UNT y ahora comenzaré a estudiar lo que me gusta. Te agradezco mucho Sayuri 💖<br><br>
+
+<b>Postdata: la contraseña de la carta 2 es: te agradezco</b>
+`;
 document.getElementById("extra").innerHTML="";
 desbloqueo2=true;
 }
